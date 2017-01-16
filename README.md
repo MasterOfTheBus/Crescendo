@@ -41,6 +41,7 @@
 > * Give you a rating.
 > * This is a horrible idea but... (I love it already) we train classifiers with labelled examples of good piano music (Yiruma) and bad piano music (cats jumping on piano) and we predict a regression score on audio of your practices. => Super naïve method
 > * Possibly use [**synthesia**](http://www.synthesiagame.com/) as a way to compare
+>   * Look into music composition software and signal processing (that's not broad at all...) [**notezilla**](http://www.notezilla.io/p/bach/goldberg-variations-1) and a [**hacker news search**](https://hn.algolia.com/?query=sheet%20music&sort=byPopularity&prefix&page=0&dateRange=all&type=story)
 
 > A: Nostalgic factor
 > * Save first and last audio to compare progress. However, people won't revisit first audio that often because they've seen how bad it is.
