@@ -1,0 +1,25 @@
+{
+  "name": "crescendo",
+  "version": "1.0.0",
+  "description": "an application designed to track a piano learner's progression on classic piano exercises",
+  "main": "test.js",
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MasterOfTheBus/Crescendo.git"
+  },
+  "contributors": [
+    "Charles Liu <charlesliu.2012@gmail.com> (charlesliu.me)",
+    "Sidney Ng <yendisng@gmail.com> (github.com/MasterOfTheBus)"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MasterOfTheBus/Crescendo/issues"
+  },
+  "homepage": "https://github.com/MasterOfTheBus/Crescendo#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
