@@ -30,6 +30,7 @@
     "@angular/router": "~3.4.0",
     "@angular/upgrade": "~2.4.0",
     "angular-in-memory-web-api": "~0.1.16",
+    "body-parser": "^1.16.0",
     "core-js": "^2.4.1",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
