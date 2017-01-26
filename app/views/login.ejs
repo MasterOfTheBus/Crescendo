@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> <%= title %> </title>
+    <!-- ProTip: You can find the CSS files on the examples page and change the paths
+    to convert local paths to external URL paths
+    When adapting bootstrap templates to your own, leave all CSS style stuff intact,
+    and focus on functionality purposes like posting forms and changing input names -->
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- This is embedded javascript! Inline code adds an extra '=' in the starting tag -->
+    <% for (var i in messages) { %>
+      <div class="flash"> <%= messages[i] %> </div>
+    <% } %>
+
+
+    <div class="container">
+
+      <!--
+      What does 'autofocus', 'required' mean?
+      re: https://thenewcode.com/258/HTML5-Form-Attributes-required-placeholder-autofocus-pattern
+      Also, note: One thing you should note in the login.ejs and register.ejs files
+       are the name parameters of the input fields - they correspond to the Mongoose User model fields.
+      -->
+
+
+      <form class="form-signin" action="/login" method="post">
+        <h2 class="form-signin-heading">Open, says me</h2>
+
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
+
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+      <div class="row">
+        <div class="center-block text-center">
+          <a href="/oauth/facebook"> Login with Facebook </a> |
+          <a href="/oauth/twitter"> Login with Twitter </a>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
