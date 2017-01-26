@@ -1,19 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <!-- <title><%= title %></title> -->
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <h1><%= user %></h1>
-    <% if (user) { %>
-      <h2> Hello <%= user %></h2>
-      <a href="/logout">Logout</a>
-    <% } else { %>
-      <a href="/register">Register</a>
-      <a href="/login">Login</a>
-    <% } %>
+    <meta charset="utf-8">
+    <title><%= title %></title>
 
-    <!-- <img src="img/logo.png" alt="Google Logo"> -->
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Cover</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading"><%= title %></h1>
+            <p class="lead">Crescendo is a website app that keeps track of your piano exercise progress.</p>
+
+            <% if (user) { %>
+              <h3> Hello <%= user %>!</h3>
+              <p class="lead">
+                <a href="/logout" class="btn btn-lg btn-default">Logout</a>
+              </p>
+            <% } else { %>
+                  <a href="/register" class="btn btn-default btn-lg ">Register</a>
+                  <a href="/login" class="btn btn-default btn-lg ">Login</a>
+            </div>
+            <% } %>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
