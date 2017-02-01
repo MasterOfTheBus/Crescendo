@@ -39,6 +39,8 @@ module.exports = function() {
     routes(app);
     var user_routes = require("../app/routes/users.server.routes.js");
     user_routes(app);
+    var exercise_routes = require("../app/routes/exercises.server.routes.js");
+    exercise_routes(app);
 
     app.use(express.static('./public')) // serving static files
     return app;
