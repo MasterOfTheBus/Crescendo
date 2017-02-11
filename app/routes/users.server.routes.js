@@ -6,6 +6,8 @@ module.exports = function(app) {
 
     app.route("/users/:userId").get(users.read).put(users.update).delete(users.delete);
 
+    app.route('/users/:userId/exercises').post(users.createExercise);
+
     app.param("userId", users.userByID);
 
     app.route("/register").get(users.renderRegister).post(users.register);

@@ -19,6 +19,7 @@ var UserSchema = new Schema({
         trim: true,
         unique: true
     },
+    exercises: [],
     password: String,
     provider: String,
     providerId: String,

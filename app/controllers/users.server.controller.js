@@ -1,4 +1,5 @@
 var User = require("mongoose").model('User'),
+    Exercise = require("mongoose").model('Exercise'),
     passport = require("passport");
 
 var getErrorMessage = function(err) {
@@ -127,13 +128,7 @@ exports.userByID = function(req, res, next, id) {
 };
 
 exports.update = function(req, res, next) {
-    User.findByIdAndUpdate(req.user.id, req.body, function(err, user) {
-        if (err) {
-            return next(err);
-        } else {
-            res.json(user);
-        }
-    })
+    performFindAndUpdate(req.user.id, req.body, res);
 };
 
 exports.delete = function(req, res, next) {
@@ -145,3 +140,24 @@ exports.delete = function(req, res, next) {
         }
     })
 };
+
+// ========== Updating Exercises embedded in the User =================
+
+exports.createExercise = function (req, res, next) {
+    // what about err?
+    var exercise = new Exercise(req.body);
+    var user = req.user;
+
+    user.exercises.push(exercise);
+    performFindAndUpdate(req.user.id, user, res);
+};
+
+function performFindAndUpdate (id, updatedUser, res) {
+    User.findByIdAndUpdate(id, updatedUser, function(err, user) {
+        if (err) {
+            return next(err);
+        } else {
+            res.json(user);
+        }
+    });
+}
