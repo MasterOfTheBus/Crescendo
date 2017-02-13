@@ -6,7 +6,7 @@ module.exports = function(app) {
 
     app.route("/users/:userId").get(users.read).put(users.update).delete(users.delete);
 
-    app.route('/users/:userId/exercises').post(users.createExercise);
+    app.route('/users/:userId/exercises').post(users.createExercise).get(users.listExercises);
 
     app.param("userId", users.userByID);
 

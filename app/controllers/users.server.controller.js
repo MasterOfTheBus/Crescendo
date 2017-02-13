@@ -148,9 +148,21 @@ exports.createExercise = function (req, res, next) {
     var exercise = new Exercise(req.body);
     var user = req.user;
 
-    user.exercises.push(exercise);
+    if (user.exercises === undefined) {
+        user.exercises = {};
+    }
+    user.exercises[exercise.id] = exercise;
+
     performFindAndUpdate(req.user.id, user, res);
 };
+
+exports.listExercises = function (req, res, next) {
+    res.json(req.user.exercises);
+}
+
+//exports.findExerciseById = function (req, res, next) {
+    
+//}
 
 function performFindAndUpdate (id, updatedUser, res) {
     User.findByIdAndUpdate(id, updatedUser, function(err, user) {
