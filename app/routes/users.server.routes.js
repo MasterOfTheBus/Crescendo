@@ -8,6 +8,8 @@ module.exports = function(app) {
 
     app.route('/users/:userId/exercises').post(users.createExercise).get(users.listExercises);
 
+    app.route('/users/:userId/exercises/:exerciseId').get(users.readExercise);
+
     app.param("userId", users.userByID);
 
     app.route("/register").get(users.renderRegister).post(users.register);

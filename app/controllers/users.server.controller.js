@@ -160,9 +160,10 @@ exports.listExercises = function (req, res, next) {
     res.json(req.user.exercises);
 }
 
-//exports.findExerciseById = function (req, res, next) {
-    
-//}
+exports.readExercise = function (req, res) {
+    var exercise = new Exercise(req.user.exercises[req.params.exerciseId]);
+    res.json(exercise);
+}
 
 function performFindAndUpdate (id, updatedUser, res) {
     User.findByIdAndUpdate(id, updatedUser, function(err, user) {
