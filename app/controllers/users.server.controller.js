@@ -165,7 +165,27 @@ exports.readExercise = function (req, res) {
     res.json(exercise);
 }
 
+exports.updateExercise = function (req, res) {
+    var user = req.user;
+    user.exercises[req.params.exerciseId] = req.body;
+    performFindAndUpdate(req.user.id, user, res);
+}
+
+exports.deleteExercise = function (req, res) {
+    var user = req.user;
+    console.log(JSON.stringify(user));
+    var exercises = user["exercises"];
+    console.log(JSON.stringify(exercises));
+    delete exercises[req.params.exerciseId];
+    console.log(JSON.stringify(exercises));
+    
+    user.exercises = exercises;
+    console.log(JSON.stringify(user));
+    performFindAndUpdate(req.user.id, user, res);
+}
+
 function performFindAndUpdate (id, updatedUser, res) {
+    console.log(JSON.stringify(updatedUser));
     User.findByIdAndUpdate(id, updatedUser, function(err, user) {
         if (err) {
             return next(err);

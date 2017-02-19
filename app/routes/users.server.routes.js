@@ -8,7 +8,7 @@ module.exports = function(app) {
 
     app.route('/users/:userId/exercises').post(users.createExercise).get(users.listExercises);
 
-    app.route('/users/:userId/exercises/:exerciseId').get(users.readExercise);
+    app.route('/users/:userId/exercises/:exerciseId').get(users.readExercise).put(users.updateExercise).delete(users.deleteExercise);
 
     app.param("userId", users.userByID);
 
