@@ -143,6 +143,12 @@ exports.delete = function(req, res, next) {
 
 // ========== Updating Exercises embedded in the User =================
 
+exports.renderDashboard = function (req, res, next) {
+    res.render('dashboard', {
+        exercises: req.user.exercises
+    });
+}
+
 exports.createExercise = function (req, res, next) {
     // what about err?
     var exercise = new Exercise(req.body);

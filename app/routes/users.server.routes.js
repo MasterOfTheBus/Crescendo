@@ -6,6 +6,8 @@ module.exports = function(app) {
 
     app.route("/users/:userId").get(users.read).put(users.update).delete(users.delete);
 
+    app.route("/users/:userId/dashboard").get(users.renderDashboard);
+
     app.route('/users/:userId/exercises').post(users.createExercise).get(users.listExercises);
 
     app.route('/users/:userId/exercises/:exerciseId').get(users.readExercise).put(users.updateExercise).delete(users.deleteExercise);

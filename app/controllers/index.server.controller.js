@@ -3,6 +3,9 @@ exports.render = function(req, res) {
         title: "Crescendo",
         user: req.user
             ? req.user.username
+            : '',
+        id: req.user
+            ? req.user._id
             : ''
     });
     // res.status(200).send({title: "Bonjour World!"});
