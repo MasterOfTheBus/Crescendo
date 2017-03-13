@@ -144,8 +144,17 @@ exports.delete = function(req, res, next) {
 // ========== Updating Exercises embedded in the User =================
 
 exports.renderDashboard = function (req, res, next) {
+    // do the conversion to an array server-side
+    var exercises = [];
+    if (req.user.exercises !== null && req.user.exercises !== undefined) {
+        for (var key in req.user.exercises) {
+            if (req.user.exercises.hasOwnProperty(key)) {
+                exercises.push(req.user.exercises[key]);
+            }
+        }
+    }
     res.render('dashboard', {
-        exercises: req.user.exercises
+        exercises: exercises
     });
 }
 
